@@ -1,16 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-    var rightA = "61108N4MA"
+    var rightA = "4825"
     var text = "bastille_sodome@inbox.ru\nDonatienAlphonse"
     function on_click(){
       var v = $("#input").val()
       if(v === rightA){
         alert(text);
       }else{
+      	$("#input").attr("placeholder", "(3->10)")
         alert('Неправильный код')
       }
 
@@ -38,6 +39,9 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
   	}
+  	h1 {
+   	font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+    }
 
   </style>
 
@@ -45,10 +49,10 @@
 <body>
 
 <div  class="center centerV">
-	<h1 class="center">ANSWER</h1>
-	<input type="text" name="pipecPolnii" id = 'input' >
+	<h1 class="center">Введите число</h1>
+	<input type="text" class="center" name="pipecPolnii" id = 'input' placeholder="(10)" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 	<br>
-	<button onclick="on_click()" class="center">Check</button>
+	<button onclick="on_click()" class="center" >Check</button>
 </div>
 </body>
 </html>
